@@ -1,12 +1,21 @@
-import React from 'react';
-import { movies } from '../data';
+import React from 'react'
+import {movies} from '../data'
 
 const Movies = () => {
   return (
     <div>
-        {/*{code here}*/}
+      <h1>Movies Page</h1>
+      {movies.map(movie => 
+        <div key={movie.title}>
+          <h2>{movie.title}</h2>
+          <span>{movie.time} min</span>
+          <ul>
+            {movie.genres.map(genre => <li key={genre}>{genre}</li>)}
+          </ul>
+        </div>
+      )}
     </div>
-  );
-};
+  )
+}
 
-export default Movies;
+export default Movies
